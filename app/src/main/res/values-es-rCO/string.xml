@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Exercicios</string>
+    <string name="welcome_message"> Mira mi GUI: </string>
+    <string name="button_text"> Click aqui </string>
+    <string name="check_box"> Haz clic en asto </string>
+    <string name="switch_button"> Cambia encender / apagar </string>
+    <string name="edit_text"> Escribe aqui </string>
+    <string name="toast_message"> Aqui hay mas informacion </string>
+    <string name="switch_msg_on"> El switch es ENCENDIDO </string>
+    <string name="switch_msg_off"> El switch es APAGADO </string>
+    <string name="top_message_part_two"> Lab 2 GUI </string>
+    <string name="bottom_edit_text">Escribe tu nombre aqui</string>
+</resources>

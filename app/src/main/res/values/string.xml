@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Exercises</string>
+    <string name="welcome_message"> Look at my GUI: </string>
+    <string name="button_text"> Click here </string>
+    <string name="check_box"> Check this out </string>
+    <string name="switch_button"> Switch on / off </string>
+    <string name="edit_text"> Type here </string>
+    <string name="toast_message"> Here is more information </string>
+    <string name="switch_msg_on"> The switch is now ON </string>
+    <string name="switch_msg_off"> The switch is now OFF </string>
+    <string name="top_message_part_two"> Lab 2 GUI </string>
+    <string name="bottom_edit_text">Enter name here</string>
+</resources>

@@ -18,15 +18,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_linear);
+        setContentView(R.layout.activity_main_constraint2);
 
         //now your xml is loaded
-        TextView topView = findViewById(R.id.textView); //must match XML id
+        TextView topView = findViewById(R.id.textView2); //must match XML id
         String oldText = topView.getText().toString();
-        topView.setText("Java put this here");
+        //topView.setText();
 
 
-        Button btn = findViewById(R.id.button2);
+        Button btn = findViewById(R.id.button3);
         btn.setOnClickListener(new View.OnClickListener() { //anonymous class
             @Override
             public void onClick(View v) {
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Switch switchBotton = (Switch) findViewById(R.id.switch1);
+        Switch switchBotton = (Switch) findViewById(R.id.switch2);
 
         switchBotton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override

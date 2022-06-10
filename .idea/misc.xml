@@ -3,10 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/CST2335/app/src/main/res/layout-en-rCA/activity_main.xml" value="0.21041666666666667" />
         <entry key="..\:/CST2335/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/CST2335/app/src/main/res/layout/activity_main_constraint.xml" value="0.25" />
         <entry key="..\:/CST2335/app/src/main/res/layout/activity_main_constraint2.xml" value="0.24074074074074073" />
         <entry key="..\:/CST2335/app/src/main/res/layout/activity_main_linear.xml" value="0.15760869565217392" />
+        <entry key="..\:/CST2335/app/src/main/res/layout/activity_main_shared_pref.xml" value="0.4" />
+        <entry key="..\:/CST2335/app/src/main/res/layout/activity_profile.xml" value="0.15677083333333333" />
       </map>
     </option>
   </component>

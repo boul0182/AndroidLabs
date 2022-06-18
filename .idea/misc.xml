@@ -4,12 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/CST2335/app/src/main/res/layout-en-rCA/activity_main.xml" value="0.21041666666666667" />
+        <entry key="..\:/CST2335/app/src/main/res/layout/activity_chat_room.xml" value="0.264" />
         <entry key="..\:/CST2335/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/CST2335/app/src/main/res/layout/activity_main_constraint.xml" value="0.25" />
         <entry key="..\:/CST2335/app/src/main/res/layout/activity_main_constraint2.xml" value="0.24074074074074073" />
         <entry key="..\:/CST2335/app/src/main/res/layout/activity_main_linear.xml" value="0.15760869565217392" />
         <entry key="..\:/CST2335/app/src/main/res/layout/activity_main_shared_pref.xml" value="0.4" />
         <entry key="..\:/CST2335/app/src/main/res/layout/activity_profile.xml" value="0.15677083333333333" />
+        <entry key="..\:/CST2335/app/src/main/res/layout/receive_message.xml" value="0.1890625" />
+        <entry key="..\:/CST2335/app/src/main/res/layout/send_message.xml" value="0.175" />
       </map>
     </option>
   </component>

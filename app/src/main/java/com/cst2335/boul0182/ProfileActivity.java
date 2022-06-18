@@ -53,8 +53,6 @@ public class ProfileActivity extends AppCompatActivity {
         String retrievedEmail = fromMain.getStringExtra("Email");
         editTextEmail.setText(retrievedEmail);
 
-
-
         myPictureTakerLauncher =
                 registerForActivityResult( new ActivityResultContracts.StartActivityForResult()
                         ,new ActivityResultCallback<ActivityResult>() {
@@ -75,6 +73,13 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 dispatchTakePictureIntent();
             }
+        });
+
+        Intent nextPage = new Intent(this,ChatRoomActivity.class);
+        Button chatButton = findViewById(R.id.chatButton);
+        chatButton.setOnClickListener( click ->
+        {
+            startActivity(nextPage);    //go to Chatctivity.java
         });
     }
 

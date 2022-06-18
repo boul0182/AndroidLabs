@@ -11,4 +11,8 @@
     <string name="textProfile"> Your profile  </string>
     <string name="textName"> Your name  </string>
     <string name="editTextName"> Enter your name </string>
+    <string name="chatButton"> Go to chat </string>
+    <string name="sendButton"> SEND </string>
+    <string name="receiveButton"> RECEIVE </string>
+    <string name="enterMessage"> Type here </string>
 </resources>

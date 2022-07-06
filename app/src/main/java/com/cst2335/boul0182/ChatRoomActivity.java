@@ -38,16 +38,18 @@ public class ChatRoomActivity extends AppCompatActivity {
 
         send = findViewById(R.id.send);
         send.setOnClickListener( click -> {
-            messages.add();
+            messages.add(R.id.textViewSend); //how to bring the message?
             myList.notifyDatasetChanged();
         });
 
         receive = findViewById(R.id.receive);
         receive.setOnClickListener(click -> {
-            messages.add();
-            myAdapter.notifyDatasetChanged();
+            messages.add(R.id.textViewReceive); //how to bring the message?
+            myList.notifyDatasetChanged();
         });
         }
+
+        myList.setOnItemLongClickListener(); //???
 
     }
 
@@ -68,7 +70,7 @@ public class ChatRoomActivity extends AppCompatActivity {
 
         @Override
         public Object getItem(int position) {
-            return "This is row " + position;
+            return "This is row " + messages.get(position);
         }
 
         @Override

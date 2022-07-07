@@ -1,9 +1,11 @@
 package com.cst2335.boul0182;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,9 +23,8 @@ import java.util.ArrayList;
 public class ChatRoomActivity extends AppCompatActivity {
 
     Button send;
-    EditText edit;
     Button receive;
-    ArrayList<ConversationActions.Message> messages = new ArrayList<>();
+    ArrayList<ChatRoomActivity.Message> messages = new ArrayList<>();
     MyListAdapter myAdapter;
 
     @Override
@@ -31,25 +32,46 @@ public class ChatRoomActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_room);
 
-        //is chatText the correct parameter ???
         ListView myList = findViewById(R.id.chatText);
-
-        myList.setAdapter( myAdapter = new MyListAdapter());
+        myList.setAdapter(myAdapter = new MyListAdapter());
+        EditText messageText = findViewById(R.id.enterMessage);
 
         send = findViewById(R.id.send);
-        send.setOnClickListener( click -> {
-            messages.add(R.id.textViewSend); //how to bring the message?
-            myList.notifyDatasetChanged();
+        send.setOnClickListener(click -> {
+            String msgText = messageText.getText().toString();
+            Message sendMsg = new Message(true, msgText);
+            messages.add(sendMsg);
+            messageText.setText("");
+            myAdapter.notifyDataSetChanged();
         });
 
         receive = findViewById(R.id.receive);
         receive.setOnClickListener(click -> {
-            messages.add(R.id.textViewReceive); //how to bring the message?
-            myList.notifyDatasetChanged();
-        });
-        }
+            String msgText = messageText.getText().toString();
 
-        myList.setOnItemLongClickListener(); //???
+            Message receiveMsg = new Message(false, msgText);
+            messages.add(receiveMsg);
+            messageText.setText("");
+            myAdapter.notifyDataSetChanged();
+        });
+
+        myList.setOnItemLongClickListener((parent, view, position, id) -> {
+
+            AlertDialog.Builder alertMsg = new AlertDialog.Builder(this);
+            alertMsg.setTitle("Are you sure you want to delete this message?")
+
+                    .setMessage("This will delete the message: " + position)
+
+                    .setPositiveButton("DELETE", (click, arg) -> {
+                        messages.remove(position);
+                        myAdapter.notifyDataSetChanged();
+                    })
+                    .setNegativeButton("CANCEL", (click, arg) -> {})
+
+            .create().show();
+
+            return true;
+        });
 
     }
 
@@ -57,7 +79,7 @@ public class ChatRoomActivity extends AppCompatActivity {
         private TextView chatMsg;
         private ImageButton avatar;
         private Context context;
-        private ArrayList<String> messages = new ArrayList<>();
+
 
         public void setAvatar(ImageButton avatar) {
             this.avatar = avatar;
@@ -80,72 +102,57 @@ public class ChatRoomActivity extends AppCompatActivity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            Message newMessage = (Message) getItem(position);
             LayoutInflater inflater = getLayoutInflater();
 
             //make a new row:
             View row = convertView;
 
             //determine the type of message
-            if (newMessage.sent) {
+            if (messages.get(position).getSent() == true) {
                 row = inflater.inflate(R.layout.send_message, parent, false);
                 TextView chatMsg = row.findViewById(R.id.textViewSend);
-                chatMsg.setText(newMessage.messageText.toString());
-                ImageButton avatar = row.findViewById((R.id.imageButtonSend));
-                //set avatar for message ????
-                setAvatar(newMessage.getAvatar());
+                chatMsg.setText(messages.get(position).getMessageText());
             } else {
                 row = inflater.inflate(R.layout.receive_message, parent, false);
                 TextView chatMsg = row.findViewById(R.id.textViewReceive);
-                chatMsg.setText(newMessage.messageText.toString());
-                ImageButton avatar = row.findViewById((R.id.imageButtonReceive));
-                //set avatar for message ????
-                setAvatar(newMessage.getAvatar());
+                chatMsg.setText(messages.get(position).getMessageText());
             }
 
             //return it to be put in the table
             return row;
         }
 
+    }
+
         private class Message {
             public boolean sent;
-            TextView messageText;
-            ImageButton avatar;
+            String messageText;
 
-            public Message(boolean sent, TextView messageText, ImageButton avatar) {
-                super();
+            public Message(boolean sent, String messageText) {
                 this.messageText = messageText;
-                this.avatar = avatar);
+                this.sent=sent;
             }
 
             public void setSent(boolean status) {
                 this.sent = status;
             }
 
-            public void setMessageText(TextView text) {
+            public void setMessageText(String text) {
                 this.messageText = text;
-            }
-
-            public void setAvatar(ImageButton avatar) {
-                this.avatar = avatar;
             }
 
             public boolean getSent() {
                 return sent;
             }
 
-            public TextView getMessageText() {
+            public String getMessageText() {
                 return messageText;
-            }
-
-            public ImageButton getAvatar() {
-                return avatar;
             }
 
         }
 
 
-    }
+
 
 
 }

@@ -12,10 +12,10 @@
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton"
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonReceive"
         />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/imageButtonReceive"
         android:layout_width="96dp"
         android:layout_height="wrap_content"

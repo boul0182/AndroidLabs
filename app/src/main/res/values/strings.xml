@@ -1,1 +1,6 @@
-<resources></resources>
+<resources>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Message Here</string>
+    <string name="check_button">Is a Send Message</string>
+    <string name="hide_button">HIDE</string>
+</resources>

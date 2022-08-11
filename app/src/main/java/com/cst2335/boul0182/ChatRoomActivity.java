@@ -2,6 +2,7 @@ package com.cst2335.boul0182;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -16,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -37,6 +39,8 @@ public class ChatRoomActivity extends AppCompatActivity {
     int sOrRIndex;
     String message;
     String TAG = "ChatRoomActivity";
+    FrameLayout frmLayout;
+    boolean isTablet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -137,6 +141,19 @@ public class ChatRoomActivity extends AppCompatActivity {
             .create().show();
 
             return true;
+        });
+
+        frmLayout = findViewById(R.id.frameLayout);
+
+        isTablet = frmLayout != null;
+
+        myList.setOnItemClickListener((parent, view, position, id) -> {
+
+//            if(isTablet = true) {
+//                FragmentTransaction ft = getSupportFragmentManager().beginTransaction().replace(frmLayout);
+//            } else {
+//                startActivity();
+//            }
         });
 
     }

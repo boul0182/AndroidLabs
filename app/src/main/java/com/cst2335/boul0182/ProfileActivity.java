@@ -36,6 +36,7 @@ public class ProfileActivity extends AppCompatActivity {
     TextView editTextEmail;
     ActivityResultLauncher<Intent> myPictureTakerLauncher;
     ImageButton cameraButton;
+    Button toolbarButton;
 
 
     @Override
@@ -80,6 +81,14 @@ public class ProfileActivity extends AppCompatActivity {
         chatButton.setOnClickListener( click ->
         {
             startActivity(nextPage);    //go to Chatctivity.java
+        });
+
+        //toolbarButton action
+        Intent toolbarPage = new Intent( this, TestToolbar.class);
+        toolbarButton = findViewById(R.id.toolbarButton);
+        toolbarButton.setOnClickListener( view ->
+        {
+            startActivity(toolbarPage); //go to TestToolbar.java
         });
     }
 

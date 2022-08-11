@@ -15,4 +15,8 @@
     <string name="sendButton"> ENVIA </string>
     <string name="receiveButton"> RECIBE </string>
     <string name="enterMessage"> Escribe aqui </string>
+    <string name="chatPage"> Naviga a Chat Page </string>
+    <string name="backToProfile"> Devuelve a Profile</string>
+    <string  name="Open"> Abre </string>
+    <string  name="Close"> Cierra </string>
 </resources>
